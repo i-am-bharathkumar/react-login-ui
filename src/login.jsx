@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
-import dashboard from "./dashboard.jsx";
-import { useState } from "react";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
-  const handlesubmit = (e) => {
+
+  const handlesubmit = async (e) => {
     e.preventDefault();
-    if (email === "bk" && password === "1234") {
-      navigate("/dashboard");
-    } else {
-      alert("Invalid credentials");
+
+    // Send POST request to backend
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Login successful & saved to MongoDB");
+        navigate("/datatbase");
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Backend error: " + error.message);
     }
   };
+
   return (
     <>
       <h1 className="heading">Login page</h1>
@@ -28,18 +44,18 @@ function Login() {
             placeholder="enter the mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <br></br>
-          <label className="mail">password</label>
+          />
+          <br />
+          <label className="mail">Password</label>
           <input
-            type="text"
+            type="password"
             className="input"
             placeholder="enter the password"
             value={password}
             onChange={(e) => setpassword(e.target.value)}
-          ></input>
-          <br></br>
-          <button type="submit" className="btn" onClick={dashboard}>
+          />
+          <br />
+          <button type="submit" className="btn">
             Login
           </button>
         </div>
@@ -47,4 +63,5 @@ function Login() {
     </>
   );
 }
+
 export default Login;
