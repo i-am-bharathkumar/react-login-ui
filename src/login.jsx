@@ -23,7 +23,7 @@ function Login() {
       const data = await response.json();
       if (response.ok) {
         alert("Login successful & saved to MongoDB");
-        navigate("/datatbase");
+        navigate("/database");
       } else {
         alert("Error: " + data.message);
       }
@@ -36,7 +36,7 @@ function Login() {
     <>
       <h1 className="heading">Login page</h1>
       <form onSubmit={handlesubmit}>
-        <div className="container">
+        <div className="containerr">
           <label className="mail">E-mail</label>
           <input
             type="text"
