@@ -33,10 +33,10 @@ function Login() {
   };
 
   return (
-    <>
-      <h1 className="heading">Login page</h1>
-      <form onSubmit={handlesubmit}>
-        <div className="containerr">
+    <div className="login-container">
+      <h1 className="heading">LOGIN PAGE</h1>
+      <form onSubmit={handlesubmit} className="login-form">
+          <div className="form-group">
           <label className="mail">E-mail</label>
           <input
             type="text"
@@ -45,7 +45,8 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br />
+          </div>
+          <div className="form-group">
           <label className="mail">Password</label>
           <input
             type="password"
@@ -54,13 +55,19 @@ function Login() {
             value={password}
             onChange={(e) => setpassword(e.target.value)}
           />
-          <br />
-          <button type="submit" className="btn">
-            Login
-          </button>
-        </div>
+          </div>
+          <div className="loginpage-btn">
+              <button
+                type="button"
+                className="newuser-btn"
+                onClick={() => navigate("/register")}
+                >New User</button>
+              <button type="submit" className="login-btn">
+                LOGIN
+              </button>
+            </div>
       </form>
-    </>
+    </div>
   );
 }
 
