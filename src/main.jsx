@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "./login.jsx";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
 import App from "./app.jsx"; // Import the App component

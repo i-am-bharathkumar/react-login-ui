@@ -1,0 +1,83 @@
+/* General navbar styling */
+.navbar {
+  background-color: #eff5fa; /* light background */
+  border-bottom: 4px solid #055f66;
+  padding: 10px 20px;
+}
+
+/* Container flex layout */
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand/logo center-aligned */
+.navbar-brand {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #055f66;
+}
+
+/* Nav links on the left */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #055f66;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Search and auth buttons container (right side) */
+.nav-search-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search input style */
+.nav-search-input {
+  padding: 6px 12px;
+  border: 2px solid #055f66;
+  border-radius: 6px;
+  outline: none;
+  width: 180px;
+}
+
+/* Shared nav button styles */
+.nav-btn {
+  padding: 6px 14px;
+  border: 2px solid #055f66;
+  background-color: white;
+  color: #055f66;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background-color: #055f66;
+  color: white;
+}
+
+/* Specific style for Search button */
+.search-btn {
+  background-color: #055f66;
+  color: white;
+  border: none;
+}
+
+.search-btn:hover {
+  background-color: #04464c;
+}

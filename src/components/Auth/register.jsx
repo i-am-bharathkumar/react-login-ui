@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./register.css";
+import "./Auth_Styles/register.css"; 
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -41,7 +41,7 @@ export default function Register() {
 
   return (
     <div className="register-container">
-      <h1>Register</h1>
+      <h1 className="register-heading">REGISTER</h1>
       <form className="register-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -86,8 +86,14 @@ export default function Register() {
             required
           />
         </div>
-
-        <button type="submit" className="reg-btn">Register</button>
+        <div className="register-btns">
+          <button
+          type="button"
+          className="reg-btn2"
+          onClick={() => navigate("/login")}
+          >LOGIN</button>
+        <button type="submit" className="reg-btn1">REGISTER</button>
+        </div>
       </form>
     </div>
   );

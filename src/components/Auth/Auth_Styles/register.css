@@ -1,0 +1,82 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #bde0e8;
+  font-family: Arial, sans-serif;
+}
+
+.register-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px 10px rgb(149, 146, 146);
+}
+
+.register-heading {
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 5px 5px 10px rgba(2, 2, 1, 2.1);
+}
+
+.register-heading:hover {
+  color: #055f66;
+  margin-bottom: 20px;
+  text-shadow: 5px 5px 10px rgba(2, 2, 1, 2.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.reg-btn1 {
+  margin-top: 10px;
+  color: rgb(0, 111, 6);
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0px 0px 0px 170px;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.reg-btn2 {
+  margin-top: 10px;
+  color: rgb(0, 111, 6);
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0px 0px 0px 10px;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
+  font-size: smaller;
+}
+
+.reg-btn1:hover {
+  background-color: #ffffff;
+  color: rgb(17, 71, 196);
+  text-shadow: 5px 5px 10px rgba(2, 2, 1, 2.1);
+}
+
+.reg-btn2:hover {
+  background-color: #ffffff;
+  color: rgb(17, 71, 196);
+  text-shadow: 5px 5px 10px rgba(2, 2, 1, 2.1);
+}

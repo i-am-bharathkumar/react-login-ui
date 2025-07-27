@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./login.css";
+import "./Auth_Styles/login.css";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -22,8 +22,9 @@ function Login() {
 
       const data = await response.json();
       if (response.ok) {
+        localStorage.setItem("token", "1234"); // Simulate login token
         alert("Login successful & saved to MongoDB");
-        navigate("/database");
+        navigate("/");
       } else {
         alert("Error: " + data.message);
       }
@@ -36,36 +37,40 @@ function Login() {
     <div className="login-container">
       <h1 className="heading">LOGIN PAGE</h1>
       <form onSubmit={handlesubmit} className="login-form">
-          <div className="form-group">
+        <div className="form-group">
           <label className="mail">E-mail</label>
           <input
             type="text"
             className="input"
             placeholder="enter the mail"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          </div>
-          <div className="form-group">
+        </div>
+        <div className="form-group">
           <label className="mail">Password</label>
           <input
             type="password"
             className="input"
             placeholder="enter the password"
+            required
             value={password}
             onChange={(e) => setpassword(e.target.value)}
           />
-          </div>
-          <div className="loginpage-btn">
-              <button
-                type="button"
-                className="newuser-btn"
-                onClick={() => navigate("/register")}
-                >New User</button>
-              <button type="submit" className="login-btn">
-                LOGIN
-              </button>
-            </div>
+        </div>
+        <div className="loginpage-btn">
+          <button
+            type="button"
+            className="newuser-btn"
+            onClick={() => navigate("/register")}
+          >
+            New User
+          </button>
+          <button type="submit" className="login-btn">
+            LOGIN
+          </button>
+        </div>
       </form>
     </div>
   );
