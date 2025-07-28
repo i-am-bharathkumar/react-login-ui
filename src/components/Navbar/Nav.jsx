@@ -17,9 +17,9 @@ function Nav() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.setItem("isLoggedIn", "false");
-    setIsLoggedIn(false);
-    navigate("/login");
+  localStorage.removeItem("token");
+  localStorage.setItem("isLoggedIn", "false");
+  navigate("/login");
   };
 
   return (

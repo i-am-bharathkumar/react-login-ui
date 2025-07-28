@@ -22,8 +22,9 @@ function Login() {
 
       const data = await response.json();
       if (response.ok) {
-        localStorage.setItem("token", "1234"); // Simulate login token
-        alert("Login successful & saved to MongoDB");
+        localStorage.setItem("token", data.token); // Save token
+        localStorage.setItem("isLoggedIn", "true");
+        alert("Login successful");
         navigate("/");
       } else {
         alert("Error: " + data.message);
